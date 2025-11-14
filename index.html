@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays & Objects Lab</title>
+</head>
+<body>
+    <h1>Lab Sheet 01 - JavaScript Arrays & Objects</h1>
+    <p>Open your browser console to see the outputs.</p>
+
+    <script>
+        console.log("===== Task 1.1 =====");
+
+        const fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+        console.log(fruits);
+
+        console.log("First fruit:", fruits[0]);
+        console.log("Last fruit:", fruits[fruits.length - 1]);
+
+        fruits.push("Pineapple");
+        console.log("After adding a fruit:", fruits);
+
+        fruits.splice(1, 1);
+        console.log("After removing second fruit:", fruits);
+
+        console.log("Array length:", fruits.length);
+
+        console.log("===== Task 1.2 =====");
+
+        for (let i = 0; i < fruits.length; i++) {
+            console.log(fruits[i]);
+        }
+
+        fruits.forEach(fruit => console.log(fruit));
+
+        console.log("===== Task 2.1 =====");
+
+        const numbers = [2, 5, 8, 10, 12];
+
+        const doubled = numbers.map(num => num * 2);
+        console.log("Doubled:", doubled);
+
+        const filtered = numbers.filter(num => num > 6);
+        console.log("Filtered:", filtered);
+
+        const sum = numbers.reduce((total, num) => total + num, 0);
+        console.log("Sum:", sum);
+
+        console.log("===== Task 2.2 =====");
+
+        console.log("Includes 8?", numbers.includes(8));
+        console.log("Index of 10:", numbers.indexOf(10));
+
+        const sortedAsc = numbers.slice().sort((a, b) => a - b);
+        console.log("Sorted ascending:", sortedAsc);
+
+        console.log("===== Task 3.1 =====");
+
+        const student = {
+            name: "Kavindu",
+            age: 21,
+            faculty: "Computing",
+            subjects: ["Web Development", "Database Systems", "Programming"]
+        };
+
+        console.log("Name:", student.name);
+        console.log("Faculty:", student.faculty);
+
+        student.year = 2025;
+        student.age = 22;
+
+        student.subjects.forEach(sub => console.log(sub));
+
+        console.log("===== Task 4.1 =====");
+
+        const students = [
+            { name: "Kavindu", age: 21, faculty: "Computing" },
+            { name: "Nimesha", age: 22, faculty: "Engineering" },
+            { name: "Dinuka", age: 23, faculty: "Business" }
+        ];
+
+        students.forEach(s => console.log(s.name));
+
+        const older = students.filter(s => s.age > 21);
+        console.log("Older than 21:", older);
+
+        const faculties = students.map(s => s.faculty);
+        console.log("Faculties:", faculties);
+        console.log("===== Task 4.2 =====");
+
+        const classroom = {
+            className: "IT2025",
+            teacher: "Mr. Perera",
+            students: [
+                { name: "Kavindu", age: 21 },
+                { name: "Nimesha", age: 22 },
+                { name: "Dinuka", age: 23 }
+            ]
+        };
+        console.log("Teacher:", classroom.teacher);
+
+        classroom.students.push({
+            name: "Shanuka",
+            age: 20
+        });
+        classroom.students.forEach(s => console.log(s.name));
+
+        console.log("===== Challenge Activity =====");
+
+        const products = [
+            { name: "Keyboard", price: 2500, qty: 2 },
+            { name: "Mouse", price: 1500, qty: 3 },
+            { name: "Monitor", price: 22000, qty: 1 }
+        ];
+
+        const totalValue = products.reduce((total, product) => total + (product.price * product.qty), 0);
+
+        console.log("Total Value:", totalValue);
+    </script>
+</body>
+</html>
+
